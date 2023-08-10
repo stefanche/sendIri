@@ -1,0 +1,64 @@
+body{
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.container-big{
+    padding: 30px;
+    margin-top: 25px;
+    width: 1000px;
+    background: linear-gradient(#e66465, #9198e5);
+}
+.subtitle{
+    margin-top: -20px;
+}
+h1{
+    margin-bottom: -10px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    column-gap: 20px;
+    
+}
+.price{
+    padding: 20px;
+    width: 200px;
+    max-height: 430px;  
+    background: #B9A6A6; 
+    border-radius: 31px;
+    text-align: center;
+}
+.icon{
+    max-width: 90px;
+    max-height: 90px;
+    margin: 10px auto -8px;
+}
+img[name="check"]{
+    max-width: 14px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+}
+.list >p{
+    font-size: 12px;
+    margin-top: -5px;
+}
+.get-started{
+    background: white;
+    height: 35px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 31px;
+    margin: 10px auto;
+}
+.started{
+    color: #8C6C6C;
+}
