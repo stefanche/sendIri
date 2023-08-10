@@ -1,0 +1,2 @@
+According to the Spotify's aura explanation, the user that has the songs represented in songs.db has a yellow aura.
+The aura takes intro consideration only 3 from all the metrics that a song has. By taking into consideration every mertic, the aura could be better established for every user.

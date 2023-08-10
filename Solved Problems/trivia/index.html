@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function(){
+                let corbtn= document.querySelector('.correct');
+                let inbtn= document.querySelectorAll('.incorrect');
+
+                //this function appends a <p> child on the td where the button is located
+                function writeText(parent, text){
+                    const p = document.createElement("p");
+                    const txt = document.createTextNode(text);
+                    p.appendChild(txt);
+                    parent.appendChild(p);
+                }
+
+                corbtn.addEventListener('click', function onClik(){
+                    corbtn.style.backgroundColor= 'green';
+                    corbtn.style.color= 'white';
+                    const parentCorbtn= corbtn.parentNode;
+                    writeText(parentCorbtn, "Correct");
+                });
+                for (let i of inbtn)
+                {
+                    i.addEventListener('click', function click(){
+                        i.style.backgroundColor= 'red';
+                        i.style.color= 'white';
+                        const parentI= i.parentNode;
+                        writeText(parentI, "Incorrect");
+                    })
+                }
+
+                document.querySelector('.check').addEventListener('click', function onSubmit(){
+                    let input= document.querySelector('#free');
+                    if (input.value === 'Yes'){
+                        input.style.backgroundColor= 'green';
+                        input.style.color= 'white';
+                        document.querySelector('#feedback').innerHTML= 'Correct!';
+                    } else {
+                        input.style.backgroundColor= 'red';
+                        input.style.color= 'white';
+                        document.querySelector('#feedback').innerHTML= 'Incorrect!';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3 style="width= 50%;">What language does a programmer use for creating complex features on web pages?</h3>
+                <table>
+                    <tr>
+                        <td><button class="incorrect">CSS</button></td>
+                        <td><button class="correct">JavaScript</button></td>
+                        <td><button class="incorrect">HTML</button></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Is CS50 the best begginer course for learning programming?</h3>
+                <input type="text" id= "free"></input><button class="check">Submit answer</button>
+                <p id="feedback"></p>
+
+            </div>
+        </div>
+    </body>
+</html>
